@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAURA RADÜZ | GLOBAL CONNECT</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --deep-blue: #020817;
+            --electric-blue: #3b82f6;
+            --cyber-gold: #fbbf24;
+            --glass: rgba(15, 23, 42, 0.8);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; }
+
+        body {
+            background-color: var(--deep-blue);
+            color: #f8fafc;
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+
+        /* --- MOUSE TECH --- */
+        #cursor {
+            position: fixed;
+            width: 20px; height: 20px;
+            background: var(--electric-blue);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            mix-blend-mode: screen;
+            box-shadow: 0 0 20px var(--electric-blue);
+            transition: transform 0.1s;
+        }
+
+        /* --- BACKGROUND: A TERRA GIGANTE --- */
+        .earth-container {
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw; height: 80vw;
+            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') center/cover;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.15;
+            filter: hue-rotate(180deg) saturate(1.5);
+            animation: rotateEarth 120s linear infinite;
+            box-shadow: inset 0 0 100px #000, 0 0 50px rgba(59, 130, 246, 0.2);
+        }
+
+        @keyframes rotateEarth { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+        /* --- SEÇÕES DE TEXTO DENSO --- */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 150px 20px;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        h1 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: clamp(3rem, 10vw, 7rem);
+            color: var(--electric-blue);
+            letter-spacing: -5px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+        }
+
+        .section-block {
+            background: var(--glass);
+            padding: 60px;
+            border-radius: 40px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            backdrop-filter: blur(20px);
+            margin-bottom: 100px;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 1s ease;
+        }
+
+        .section-block.visible { transform: translateY(0); opacity: 1; }
+
+        h2 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 2rem;
+            color: var(--cyber-gold);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-align: justify;
+            color: rgba(248, 250, 252, 0.9);
+            font-weight: 300;
+        }
+
+        .highlight { color: var(--electric-blue); font-weight: 700; }
+
+        /* --- GALERIA GRID --- */
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            transition: 0.5s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.02);
+            border-color: var(--cyber-gold);
+            box-shadow: 0 0 30px rgba(251, 191, 36, 0.3);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 100px 20px;
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            text-align: center;
+        }
+
+        .scout-flag {
+            background: var(--cyber-gold);
+            color: #000;
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="cursor"></div>
+    <div class="earth-container"></div>
+
+    <div class="content">
+        <header>
+            <p style="letter-spacing: 10px; color: var(--cyber-gold);">SYSTEM INITIATED // 2026</p>
+            <h1>LAURA<br>RADÜZ</h1>
+            <p style="font-size: 1.5rem; max-width: 600px;">Navegando pela fronteira entre a tecnologia avançada e a sobrevivência em meio à natureza selvagem.</p>
+        </header>
+
+        <section class="section-block">
+            <span class="scout-flag">LOG_01: A IDENTIDADE</span>
+            <h2>FORJADA EM CÓDIGO</h2>
+            <p>Aos 16 anos, minha realidade é definida pela constante busca por inovação no <span class="highlight">Instituto Federal do Paraná</span>. Em Cascavel, não apenas estudo informática; eu vivo a lógica binária como uma ferramenta de transformação. Desde os primeiros passos no Colégio Sagrada Família até a imersão técnica atual, entendi que a tecnologia não é apenas sobre máquinas, mas sobre <span class="highlight">resolver problemas humanos</span>.</p>
+            <p>Minha jornada acadêmica é um reflexo de uma mente que não aceita o comum. Entre linhas de código e algoritmos complexos, encontro a ordem que o mundo precisa. Cada projeto no IFPR é um degrau rumo a um futuro onde a precisão técnica encontra a criatividade ilimitada.</p>
+        </section>
+
+        <section class="section-block">
+            <span class="scout-flag">LOG_02: EXPEDIÇÃO</span>
+            <h2>A BÚSSOLA INTERIOR</h2>
+            <p>O movimento escoteiro entrou na minha vida em 2022 para mudar meu sistema de coordenadas. Sob a mentoria da Chefe Marcia, descobri que ser uma <span class="highlight">Sempre Alerta</span> vai muito além de dar nós em cordas ou acampar sob as estrelas. É sobre a resiliência de enfrentar uma trilha sob chuva, a responsabilidade de liderar uma patrulha e o compromisso inegociável com a honra.</p>
+            <p>O escotismo me deu a disciplina que levo para meus estudos e a empatia que levo para a vida. Nas trilhas paranaenses, aprendi que a tecnologia pode falhar, mas o caráter e a preparação nunca falham. <span class="highlight">Liderança, serviço e aventura</span> são os pilares que me mantêm firme enquanto planejo meus próximos saltos orbitais.</p>
+        </section>
+
+        <div class="gallery">
+            <img src="Laura.jpg" alt="Laura Radüz">
+            <img src="Foto2.jpg" alt="Ana Cecília">
+        </div>
+
+        <section class="section-block">
+            <span class="scout-flag">LOG_03: ECOSSISTEMA</span>
+            <h2>FREQUÊNCIAS E CONEXÕES</h2>
+            <p>Minha "playlist" é um universo em expansão. Posso mergulhar na melancolia técnica de <span class="highlight">Pink Floyd</span> e no grunge visceral do <span class="highlight">Nirvana</span>, para logo em seguida encontrar conforto no ritmo orgânico do Pagode e da MPB. É essa dualidade que me define: o rock internacional alimenta meu foco, enquanto o samba nacional aquece minha alma brasileira.</p>
+            <p>Fora das telas e das trilhas, meu refúgio é a cozinha. Criar sobremesas e doces é minha forma de alquimia, transformando ingredientes simples em experiências sensoriais. Seja em volta de um churrasco com Leandro, Liliam e Bruno, ou brincando com a Beagle Bela e cuidando da minha afilhada Ana Cecília, entendo que a maior rede social que existe é a <span class="highlight">família</span>.</p>
+        </section>
+
+        <footer>
+            <h2 style="justify-content: center;">SEMPRE ALERTA</h2>
+            <p>© 2026 // LAURA RADÜZ PEDRO // CASCAVEL - PR</p>
+        </div>
+    </div>
+
+    <script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Efeito de revelação no scroll (Scroll Reveal)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section-block').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
