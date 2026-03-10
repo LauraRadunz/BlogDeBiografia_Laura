@@ -1,23 +1,66 @@
-<!DOCTYPE html> <!-- Declaração do tipo de documento - HTML 5 -->
-<html lang="pt BR"> <!-- Elemento raíz, lang, define o idioma -->
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<head> <!-- Informações somente para o navegador, não são visíveis na página -->
-   <meta charset="UTF-8"> <!-- Indica conteúdo com acentos -->
+<head>
+   <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Laurocas'blog </title>
+   <title>Laurocas'blog</title>
 
    <style>
+      /* Configurações Gerais */
       body {
          background-color: #FAF9F6;
          color: #1A4571;
          font-family: sans-serif;
-         margin: 40px;
+         margin: 0;
          line-height: 1.6;
       }
 
-      h1,
-      h2,
-      h3 {
+      /* HEADER FIXO */
+      header {
+         background-color: #003366; /* Azul Navy mais fechado */
+         color: #FFFFFF;            /* Texto branco para contraste */
+         text-align: center;
+         padding: 15px 0;
+         position: sticky;
+         top: 0;
+         z-index: 1000;            /* Garante que ele fique por cima de tudo */
+         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+
+      header h1 {
+         margin: 0;
+         font-size: 1.5rem;
+         color: #FFFFFF;
+      }
+
+      /* Layout Principal */
+      .container {
+         display: flex;
+         gap: 30px;
+         align-items: flex-start;
+         padding: 40px;
+         max-width: 1200px;
+         margin: 0 auto;
+      }
+
+      main {
+         flex: 3;
+      }
+
+      /* ASIDE FIXO (ajustado para não bater no header) */
+      aside {
+         flex: 1;
+         background-color: #ffffff;
+         padding: 20px;
+         border-radius: 8px;
+         border: 1px solid #D1E8FF;
+         box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+         position: sticky;
+         top: 80px; /* Ele "gruda" logo abaixo do header */
+      }
+
+      h2, h3 {
          color: #003366;
       }
 
@@ -29,96 +72,158 @@
 
       hr {
          border: 0;
-         border-top: 2px solid #1A4571;
+         border-top: 2px solid #D1E8FF;
          margin: 20px 0;
       }
 
-      img {
+      /* Galeria de Fotos */
+      .galeria-fotos {
+         display: flex;
+         gap: 15px;
+         margin-top: 20px;
+      }
+
+      .galeria-fotos img {
          border: 4px solid #1A4571;
          border-radius: 8px;
-         margin-right: 10px;
+         width: 25%;
+         height: auto;
+      }
+
+      /* Links de Navegação */
+      nav ul {
+         list-style: none;
+         padding: 0;
+      }
+
+      nav a {
+         text-decoration: none;
+         color: #1A4571;
+         font-weight: bold;
+         display: block;
+         padding: 8px;
+         border-radius: 4px;
+         transition: 0.3s;
+      }
+
+      nav a:hover {
+         background-color: #D1E8FF;
+         padding-left: 15px; /* Efeito charmoso ao passar o mouse */
+      }
+
+      /* RODAPÉ PERSONALIZADO */
+      footer {
+         background-color: #003366;
+         color: #FAF9F6;
+         text-align: center;
+         padding: 30px;
+         margin-top: 50px;
+      }
+
+      footer p {
+         margin: 5px 0;
       }
    </style>
 </head>
 
 <body>
-   <h1>↟𖠰˚☀︎ᨒ⛺︎⛰︎ ོ ༄ Laurocas's blog ↟𖠰˚☀︎ᨒ⛺︎⛰︎ ོ ༄</h1>
-   <h1>Blog V1</h1>
 
-   <section>
-      <h2>Sobre Mim</h2>
-      <p>Meu nome é <strong>Laura Radüz Pedro</strong> e tenho 16 anos. Atualmente, sou estudante do curso técnico em
-         informática no Instituto Federal do Paraná (IFPR). Antes de ingressar no IF, estudei no Colégio Sagrada Família
-         e fiz a educação infantil no Alfa.</p>
-      <p>Nasci em Cascavel, Paraná, no dia 28 de janeiro de 2010. Moro com meus pais, Liliam e Leandro, e meu irmão mais
-         velho de 20 anos, o Bruno. Tenho uma cachorra da raça beagle chamada Bela, que é muito fofa e completará 10
-         anos em 2026.</p>
-      <p>Meu objetivo para o futuro é cursar a faculdade de <strong>Direito na UFPR</strong> assim que concluir o ensino
-         médio.</p>
-   </section>
+   <header>
+      <h1>↟𖠰˚☀︎ᨒ⛺︎⛰︎ ོ ༄ Laurocas's blog ↟𖠰˚☀︎ᨒ⛺︎⛰︎ ོ ༄</h1>
+   </header>
 
-   <hr>
+   <div class="container">
+      
+      <main>
+         <section id="musica">
+            <h2>Preferências Musicais</h2>
+            <h3>Gêneros Favoritos</h3>
+            <ul>
+               <li>Rock (Nacional e Internacional)</li>
+               <li>Tango, Salsa e Estilo Gipsy Kings</li>
+               <li>MPB e Pagode</li>
+               <li>Pop Internacional dos anos 2000</li>
+            </ul>
 
-   <section>
-      <h2>Preferências Musicais</h2>
-      <h3>Gêneros Favoritos</h3>
-      <ul>
-         <li>Rock (Nacional e Internacional)</li>
-         <li>Tango, Salsa e Estilo Gipsy Kings</li>
-         <li>MPB e Pagode</li>
-         <li>Pop Internacional dos anos 2000</li>
-      </ul>
+            <h3>Artistas que mais gosto</h3>
+            <ul>
+               <li><u>Nacionais:</u> <mark>Engenheiros do Hawaii</mark>, Skank, <mark>Marisa Monte</mark>, Tribalistas,
+                  Armandinho, Kid Abelha, Turma do Pagode, Menos É Mais.</li>
+               <li><u>Internacionais:</u> <mark>Andrea Bocielli</mark>, Arctic Monkeys, Nirvana, Guns n' Roses, <mark>Pink
+                     Floyd</mark>, <mark>Red Hot Chilli Pepers</mark>, Gipsy Kings, Adele, Queen, ABBA. </li>
+            </ul>
+         </section>
 
-      <h3>Artistas que mais gosto</h3>
-      <ul>
-         <li><u>Nacionais:</u> <mark>Engenheiros do Hawaii</mark>, Skank, <mark>Marisa Monte</mark>, Tribalistas,
-            Armandinho, Kid Abelha, Turma do
-            Pagode, Menos É Mais.</li>
-         <li><u>Internacionais:</u> <mark>Andrea Bocielli</mark>, Arctic Monkeys, Nirvana, Guns n' Roses, <mark>Pink
-               Floyd</mark>, <mark>Red Hot Chilli Pepers</mark>,
-            Gipsy Kings, Adele, Queen, ABBA.</li>
-      </ul>
+         <hr>
 
-   </section>
+         <section id="esportes">
+            <h2>Preferências Esportivas</h2>
+            <ul>
+               <li>Tênis de mesa</li>
+               <li>Andar de bicicleta</li>
+            </ul>
+         </section>
 
-   <hr>
+         <hr>
 
-   <section>
-      <h2>Preferências Esportivas</h2>
-      <ul>
-         <li>Tênis de mesa</li>
-         <li>Andar de bicicleta</li>
-      </ul>
-   </section>
+         <section id="gastronomia">
+            <h2>Preferências Gastronômicas</h2>
+            <p>Eu amo cozinhar, especialmente doces e sobremesas. Minhas comidas favoritas são:</p>
+            <ul>
+               <li>Churrasco</li>
+               <li>Macarrão ao sugo</li>
+            </ul>
+            <p><em>Não gosto de frutos do mar.</em></p>
+         </section>
 
-   <hr>
+         <hr>
 
-   <section>
-      <h2>Preferências Gastronômicas</h2>
-      <p>Eu amo cozinhar, especialmente doces e sobremesas. Minhas comidas favoritas são:</p>
-      <ul>
-         <li>Churrasco</li>
-         <li>Macarrão ao sugo</li>
-      </ul>
-      <p><em>Não gosto de frutos do mar.</em></p>
-   </section>
+         <section id="hobbies">
+            <h2>Hobbies e Vida Pessoal</h2>
+            <p>Além de cozinhar, gosto muito de ler e assistir séries. Minhas favoritas são <strong>Friends</strong> e
+               <strong>Gossip Girl</strong>.</p>
+            <p>Desde 2022, faço parte do <strong>Movimento Escoteiro</strong>. É uma experiência incrível onde aprendi valores
+               valiosos e conheci pessoas maravilhosas. Um destaque especial vai para a minha chefe escoteira, Marcia.</p>
+            <p>No dia 14 de novembro de 2025, a família cresceu com a chegada da Ana Cecília, minha afilhada! ❤️</p>
+         </section>
 
-   <hr>
+         <hr>
 
-   <section>
-      <h2>Hobbies e Vida Pessoal</h2>
-      <p>Além de cozinhar, gosto muito de ler e assistir séries. Minhas favoritas são <strong>Friends</strong> e
-         <strong>Gossip Girl</strong>.
-      </p>
-      <p>Desde 2022, faço parte do <strong>Movimento Escoteiro</strong>. É uma experiência incrível onde aprendi valores
-         valiosos e conheci pessoas maravilhosas. Um destaque especial vai para a minha chefe escoteira, Marcia, que é a
-         pessoa com quem eu mais gosto de conversar.</p>
-      <p>No dia 14 de novembro de 2025 uma nova integrante chegou à minha família, a Ana Cecília, filha da minha dinda e
-         minha afilhada! <em>É a neném da foto.</em></p>
-   </section>
+         <section id="fotos">
+            <h2>Minha Galeria</h2>
+            <div class="galeria-fotos">
+               <img src="Laura.jpg" alt="Foto da Laura">
+               <img src="Foto2.jpg" alt="Minha afilhada e eu">
+               <img src="Foto3.jpg" alt="Laurinha">
+            </div>
+         </section>
+      </main>
 
-   <img src="Laura.jpg" alt="Foto da Laura" style="width: 20%; height: auto;">
-   <img src="Foto2.jpg" alt="Minha afilhada e eu" style="width: 20%; height: auto;">
+      <aside>
+         <h2>Sobre Mim</h2>
+         <p><strong>Laura Radüz Pedro</strong>, 16 anos.</p>
+         <p>Futura caloura de <strong>Direito na UFPR</strong> e apaixonada pelo movimento escoteiro.</p>
+         <hr>
+
+         <h3>Navegação</h3>
+         <nav>
+            <ul>
+               <li><a href="#musica">🎵 Músicas</a></li>
+               <li><a href="#esportes">🏓 Esportes</a></li>
+               <li><a href="#gastronomia">🍝 Gastronomia</a></li>
+               <li><a href="#hobbies">⚜️ Vida Pessoal</a></li>
+               <li><a href="#fotos">📸 Galeria</a></li>
+            </ul>
+         </nav>
+      </aside>
+
+   </div>
+
+   <footer>
+      <p><strong>Blog da Laura Radüz Pedro</strong></p>
+      <p>Cascavel, PR - 2026</p>
+      <p><em>"Sempre Alerta para o Direito!" ⚜️⚖️</em></p>
+   </footer>
+
 </body>
-
 </html>
